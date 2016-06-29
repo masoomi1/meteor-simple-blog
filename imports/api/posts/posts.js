@@ -10,9 +10,40 @@ const PostSchema = new SimpleSchema({
   },
 
   url: {
-    type: SimpleSchema.RegEx.Url,
+    type: String,
+    regEx: SimpleSchema.RegEx.Url,
     label: "Url",
-  }
+  },
+
+  createdAt: {
+    type: Date,
+    autoValue: function() {
+      return new Date();
+    },
+    autoform: {
+      type: "hidden"
+    }
+  },
+
+  author: {
+    type: String,
+    autoValue: function() {
+      return Meteor.user().username;
+    },
+    autoform: {
+      type: "hidden"
+    }
+  },
+
+  authorId: {
+    type: String,
+    autoValue: function() {
+      return Meteor.userId();
+    },
+    autoform: {
+      type: "hidden"
+    }
+  },
 });
 
 Posts.attachSchema(PostSchema);

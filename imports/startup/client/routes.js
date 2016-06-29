@@ -7,6 +7,7 @@ import '../../ui/templates/register/register.js';
 import '../../ui/templates/login/login.js';
 import '../../ui/templates/posts/posts_list.js';
 import '../../ui/templates/posts/post_view.js';
+import '../../ui/templates/posts/post_submit.js';
 
 FlowRouter.notFound = {
   action: function() {
@@ -41,3 +42,17 @@ FlowRouter.route('/post/:id', {
     BlazeLayout.render('MainLayout', { content: 'PostView' });
   }
 });
+
+FlowRouter.route('/submit', {
+  name: 'PostSubmit',
+  triggersEnter: [loginRequired],
+  action() {
+    BlazeLayout.render('MainLayout', { content: 'PostSubmit' });
+  }
+});
+
+function loginRequired() {
+  if (!Meteor.userId()) {
+    FlowRouter.go('posts');
+  }
+}

@@ -15,6 +15,6 @@ Template.PostsList.onCreated(function() {
 
 Template.PostsList.helpers({
   posts() {
-    return Posts.find();
+    return Posts.find({}, { sort: { createdAt: -1 } });
   }
 });
