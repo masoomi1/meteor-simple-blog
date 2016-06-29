@@ -1,7 +1,11 @@
 <template name="PostsList">
-  <ul>
-  {{#each posts}}
-    <li>{{> PostItem}}</li>
-  {{/each}}
-  </ul>
+  {{#if Template.subscriptionsReady}}
+    <ul>
+    {{#each posts}}
+      <li>{{> PostItem}}</li>
+    {{/each}}
+    </ul>
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

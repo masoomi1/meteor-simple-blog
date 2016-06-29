@@ -9,7 +9,7 @@ import './posts_list.html';
 Template.PostsList.onCreated(function() {
   const self = this;
   self.autorun(function() {
-    Meteor.subscribe('posts');
+    self.subscribe('posts');
   })
 })
 
