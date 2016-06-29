@@ -1,0 +1,11 @@
+<template name="PostView">
+  {{#if Template.subscriptionsReady}}
+    {{#with post}}
+      <h1>Post View {{title}} - {{_id}}</h1>
+    {{else}}
+      {{> NotFound}}
+    {{/with}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
+</template>
