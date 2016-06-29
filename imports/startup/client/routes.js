@@ -3,6 +3,8 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 import '../../ui/layouts/main_layout.js';
 import '../../ui/partials/not_found.html';
+import '../../ui/templates/register/register.js';
+import '../../ui/templates/login/login.js';
 import '../../ui/templates/posts/posts_list.js';
 import '../../ui/templates/posts/post_view.js';
 
@@ -17,6 +19,20 @@ FlowRouter.route('/', {
   action() {
     BlazeLayout.render('MainLayout', { content: 'PostsList' });
   }
+});
+
+FlowRouter.route('/signup', {
+    name: 'sigup',
+    action() {
+        BlazeLayout.render('MainLayout', { content: 'Register' });
+    }
+});
+
+FlowRouter.route('/login', {
+    name: 'login',
+    action() {
+        BlazeLayout.render('MainLayout', { content: 'Login' });
+    }
 });
 
 FlowRouter.route('/post/:id', {
