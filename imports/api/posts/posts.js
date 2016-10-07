@@ -23,7 +23,7 @@ const PostSchema = new SimpleSchema({
   author: {
     type: String,
     autoValue: function() {
-      return 'hello';//Meteor.user().username;
+      return Meteor.user().username;
     },
   },
 

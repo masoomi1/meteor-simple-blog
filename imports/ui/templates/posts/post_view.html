@@ -1,7 +1,7 @@
 <template name="PostView">
   {{#if Template.subscriptionsReady}}
     {{#with post}}
-      <h1>Post View {{title}} - {{_id}}</h1>
+      <h1><strong>{{title}}</strong> - {{_id}}</h1>
     {{else}}
       {{> NotFound}}
     {{/with}}

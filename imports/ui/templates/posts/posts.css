@@ -1,0 +1,13 @@
+ul.posts-list {
+  padding: 10px;
+}
+
+ul.posts-list li {
+  list-style-type: none;
+  margin: 5px;
+  background-color: #eee;
+}
+
+.post-item {
+  padding: 10px;
+}

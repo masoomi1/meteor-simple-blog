@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 
 import { Posts } from '../../../api/posts/posts.js';
 
+import './posts.css';
 import './post_item.js';
 import './posts_list.html';
 

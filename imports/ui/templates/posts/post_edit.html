@@ -1,0 +1,19 @@
+<template name="PostEdit">
+  <div class="page-header">
+    <h4 class="text-center">Edit a Post</h4>
+  </div>
+
+  {{#with post}}
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" value="{{title}}">
+    </div>
+    <div class="form-group">
+      <label for="url">Url</label>
+      <input type="url" class="form-control" id="url" value="{{url}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {{/with}}
+</template>
