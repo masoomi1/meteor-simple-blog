@@ -6,7 +6,6 @@ aldeed:schema-deny@1.1.0
 aldeed:schema-index@1.1.0
 aldeed:simple-schema@1.5.3
 allow-deny@1.0.5
-anvar:errors@1.0.9
 arillo:flow-router-helpers@0.5.2
 autoupdate@1.3.11
 babel-compiler@6.9.1_1
@@ -36,7 +35,7 @@ email@1.1.17_1
 es5-shim@4.6.14_1
 fastclick@1.0.12
 fzt:not-found-template@1.0.1
-fzt:simple-signin-signup@1.0.1
+fzt:simple-signin-signup@1.1.0
 geojson-utils@1.0.9
 hot-code-push@1.0.4
 html-tools@1.0.11
@@ -62,7 +61,6 @@ modules@0.7.6_1
 modules-runtime@0.7.6_1
 mongo@1.1.12_1
 mongo-id@1.0.5
-mongo-livedata@1.0.12
 npm-bcrypt@0.9.1_1
 npm-mongo@1.5.50
 observe-sequence@1.0.12
