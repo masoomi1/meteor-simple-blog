@@ -1,8 +1,8 @@
 <template name="PostsList">
   {{#if Template.subscriptionsReady}}
-    <ul>
+    <ul class="list-group">
     {{#each posts}}
-      <li>{{> PostItem}}</li>
+      <li class="list-group-item">{{> PostItem}}</li>
     {{/each}}
     </ul>
   {{else}}
