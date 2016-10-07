@@ -8,12 +8,6 @@ import { Posts } from '../../../api/posts/posts.js';
 
 import './post_submit.html';
 
-Template.PostSubmit.helpers({
-  Posts() {
-    return Posts;
-  }
-});
-
 Template.PostSubmit.events({
   "submit form": function(event) {
     event.preventDefault();
@@ -26,6 +20,7 @@ Template.PostSubmit.events({
     Meteor.call('posts.submit', post, function(err, result) {
       if (err) {
         Errors.insert({ message: err.reason });
+        return;
       }
 
       if (result.alreadyExists) {

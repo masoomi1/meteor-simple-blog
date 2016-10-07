@@ -10,8 +10,6 @@ Meteor.methods({
       url: String
     });
 
-    Posts.simpleSchema().clean(post);
-
     const sameUrlPost = Posts.findOne({ url: post.url });
     if (sameUrlPost) {
       return {
@@ -21,7 +19,7 @@ Meteor.methods({
     }
 
     const postId = Posts.insert(post);
-    
+
     return {
       _id: postId
     };

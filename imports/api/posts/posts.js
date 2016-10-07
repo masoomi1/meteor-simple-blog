@@ -6,13 +6,11 @@ export const Posts = new Mongo.Collection('posts');
 const PostSchema = new SimpleSchema({
   title: {
     type: String,
-    label: "Title",
   },
 
   url: {
     type: String,
     regEx: SimpleSchema.RegEx.Url,
-    label: "Url",
   },
 
   createdAt: {
@@ -20,19 +18,13 @@ const PostSchema = new SimpleSchema({
     autoValue: function() {
       return new Date();
     },
-    autoform: {
-      type: "hidden"
-    }
   },
 
   author: {
     type: String,
     autoValue: function() {
-      return Meteor.user().username;
+      return 'hello';//Meteor.user().username;
     },
-    autoform: {
-      type: "hidden"
-    }
   },
 
   authorId: {
@@ -40,9 +32,6 @@ const PostSchema = new SimpleSchema({
     autoValue: function() {
       return Meteor.userId();
     },
-    autoform: {
-      type: "hidden"
-    }
   },
 });
 
