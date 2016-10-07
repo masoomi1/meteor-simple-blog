@@ -8,7 +8,11 @@ Template.Header.events({
   "click .logout": function(event) {
     event.preventDefault();
 
-    Accounts.logout();
-    FlowRouter.go('posts');
+    Accounts.logout( function (err) {
+      if (err) {
+        return;
+      }
+      FlowRouter.go('posts');
+    });
   },
 });

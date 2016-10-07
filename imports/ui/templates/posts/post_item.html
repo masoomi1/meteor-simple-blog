@@ -1,3 +1,21 @@
 <template name="PostItem">
-  {{title}} - {{domain}} - <button class="btn btn-primary details">View Details</button>
+  <div class="post-item">
+    <div class="container-fluid">
+      <div class="col-xs-6">
+        <h4>{{title}}</h4>
+        <p><a href="{{url}}">{{domain}}</a></p>
+      </div>
+      <div class="col-xs-2">
+        <button class="btn btn-primary btn-small details">View</button>
+      </div>
+      {{#if ownPost}}
+      <div class="col-xs-2">
+        <button class="btn btn-warning btn-small edit-post">Edit</button>
+      </div>
+      <div class="col-xs-2">
+        <button class="btn btn-danger btn-small remove-post">&times;</button>
+      </div>
+      {{/if}}
+    </div>
+  </div>
 </template>

@@ -1,5 +1,5 @@
 import { Posts } from '../../api/posts/posts.js';
-
+/*
 if (Posts.find().count()===0) {
   Posts.insert({
     title: 'Meteor',
@@ -11,3 +11,4 @@ if (Posts.find().count()===0) {
     url: 'http://google.com',
   });
 }
+*/

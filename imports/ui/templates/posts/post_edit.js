@@ -6,18 +6,36 @@ import { Errors } from '../errors/errors_collection.js';
 
 import { Posts } from '../../../api/posts/posts.js';
 
-import './post_submit.html';
+import './post_edit.html';
 
-Template.PostSubmit.events({
+Template.PostEdit.onCreated(function() {
+  const self = this;
+  const postId = FlowRouter.getParam('id');
+  self.autorun(function() {
+    self.subscribe('singlePost', postId);
+  });
+});
+
+Template.PostEdit.helpers({
+  post() {
+    const postId = FlowRouter.getParam('id');
+    const post = Posts.findOne({_id: postId});
+    return post;
+  },
+});
+
+Template.PostEdit.events({
   "submit form": function(event) {
     event.preventDefault();
+
+    const postId = FlowRouter.getParam('id');
 
     const post = {
       title: event.target.title.value,
       url: event.target.url.value,
     };
 
-    Meteor.call('posts.submit', post, function(err, result) {
+    Meteor.call('posts.edit', postId, post, function(err, result) {
       if (err) {
         Errors.insert({ message: err.reason });
         return;

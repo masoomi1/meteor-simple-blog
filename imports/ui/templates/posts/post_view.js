@@ -3,7 +3,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import { Posts } from '../../../api/posts/posts.js';
 
-import '../../partials/not_found.html';
+//import '../../partials/not_found.html';
 import './post_view.html';
 
 Template.PostView.onCreated(function() {
