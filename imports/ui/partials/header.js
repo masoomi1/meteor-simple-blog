@@ -2,6 +2,8 @@ import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Accounts } from 'meteor/accounts-base';
 
+import '../templates/notifications/notifications.js';
+
 import './header.html';
 
 Template.Header.events({
