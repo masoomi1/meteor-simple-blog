@@ -33,6 +33,11 @@ const PostSchema = new SimpleSchema({
       return Meteor.userId();
     },
   },
+
+  comments: {
+    type: Number,
+    defaultValue: 0,
+  },
 });
 
 Posts.attachSchema(PostSchema);

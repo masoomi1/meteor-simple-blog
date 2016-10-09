@@ -1,7 +1,20 @@
 <template name="PostView">
   {{#if Template.subscriptionsReady}}
     {{#with post}}
-      <h1><strong>{{title}}</strong> - {{_id}}</h1>
+      <h1><strong>{{title}}</strong> <small>{{_id}}</small></h1>
+
+      {{#if currentUser}}
+      <form>
+        <div class="form-group">
+          <label for="body">Comment:</label>
+          <textarea class="form-control" id="body" placeholder="Insert a comment"></textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+      {{/if}}
+
+      {{> Comments}}
+    
     {{else}}
       {{> NotFound}}
     {{/with}}
