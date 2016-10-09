@@ -1,10 +1,11 @@
 <template name="PostsList">
   {{#if Template.subscriptionsReady}}
-    <ul class="posts-list">
+    <ul class="list-group">
     {{#each posts}}
-      <li>{{> PostItem}}</li>
+      <li class="list-group-item list-post-item">{{> PostItem}}</li>
     {{/each}}
     </ul>
+    <button class="btn btn-primary btn-block load-more"><strong>Load More Posts</strong></button>
   {{else}}
     {{> spinner}}
   {{/if}}
